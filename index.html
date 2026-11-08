@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path & Petal — Step Gracefully Into Your Everyday Story</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+        <div class="logo">Path & Petal</div>
+        <nav class="nav-links">
+            <a href="#home">Beranda</a>
+            <a href="#collection">Koleksi</a>
+            <a href="#" onclick="openSizeGuide(event)">Panduan Ukuran</a>
+            <a href="#story">Filosofi</a>
+            <a href="#about">Tentang Kami</a>
+            <a href="#how-to-order">Cara Belanja</a>
+            <a href="#reviews">Ulasan</a>
+            <button class="cart-btn" onclick="toggleCart()">
+                <i class="fa-solid fa-bag-shopping"></i> Keranjang 
+                <span id="cart-count">0</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <span class="badge">Elegansi di Setiap Langkah</span>
+            <h1>Crafted for your journey, soft like a petal.</h1>
+            <p>Temukan kenyamanan maksimal dalam balutan desain flatshoes artisanal yang dirancang khusus untuk menemani kisah harianmu.</p>
+            <div class="hero-buttons">
+                <a href="#collection" class="btn-primary">Jelajahi Koleksi</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collection Section -->
+    <section id="collection" class="collection-section">
+        <div class="section-title">
+            <h2>Koleksi Pilihan</h2>
+            <p>Pilih warna, tentukan ukuran kakimu, lalu masukkan ke keranjang atau beli via marketplace.</p>
+        </div>
+
+        <div class="product-grid">
+            <!-- Produk 1 -->
+            <div class="product-card" id="prod-1">
+                <div class="product-image"><img src="aura-classic-flatshoes.jpg" alt="Foto produk Aura Classic Flatshoes"></div>
+                <div class="product-info">
+                    <h3>Aura Classic Flatshoes</h3>
+                    <span class="price" data-price="285000">Rp 285.000</span>
+                    <p>Flatshoes kulit sintetis premium dengan sol empuk anti-pegal.</p>
+                    
+                    <!-- Pilihan Varian / Warna -->
+                    <div class="variant-group">
+                        <label>Warna:</label>
+                        <select id="color-prod-1" class="variant-select">
+                            <option value="Blush Pink">Blush Pink</option>
+                            <option value="Dusty Rose">Dusty Rose</option>
+                            <option value="Ivory Cream">Ivory Cream</option>
+                        </select>
+                    </div>
+
+                    <!-- Pilihan Ukuran -->
+                    <div class="variant-group">
+                        <label>Ukuran (EU):</label>
+                        <select id="size-prod-1" class="variant-select">
+                            <option value="36">36 (22.5 cm)</option>
+                            <option value="37">37 (23.0 cm)</option>
+                            <option value="38" selected>38 (23.5 cm)</option>
+                            <option value="39">39 (24.5 cm)</option>
+                            <option value="40">40 (25.0 cm)</option>
+                        </select>
+                    </div>
+                    
+                    <button class="btn-card" onclick="addCustomToCart('Aura Classic Flatshoes', 285000, 'prod-1')">
+                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                    </button>
+
+                    <div class="marketplace-links">
+                        <span class="mp-label">Atau beli via marketplace:</span>
+                        <div class="mp-buttons">
+                            <a href="https://shopee.co.id" target="_blank" class="mp-btn shopee">Shopee</a>
+                            <a href="https://tokopedia.com" target="_blank" class="mp-btn tokped">Tokopedia</a>
+                            <a href="https://tiktok.com" target="_blank" class="mp-btn tiktok">TikTok</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 2 -->
+            <div class="product-card" id="prod-2">
+                <div class="product-image"><img src="petal-weave-loafers.jpg" alt="Foto produk Petal Weave Loafers"></div>
+                <div class="product-info">
+                    <h3>Petal Weave Loafers</h3>
+                    <span class="price" data-price="310000">Rp 310.000</span>
+                    <p>Desain kepang elegan memberikan ruang napas dan gaya kasual chic.</p>
+                    
+                    <div class="variant-group">
+                        <label>Warna:</label>
+                        <select id="color-prod-2" class="variant-select">
+                            <option value="Dusty Rose">Dusty Rose</option>
+                            <option value="Taupe Earth">Taupe Earth</option>
+                        </select>
+                    </div>
+
+                    <div class="variant-group">
+                        <label>Ukuran (EU):</label>
+                        <select id="size-prod-2" class="variant-select">
+                            <option value="36">36 (22.5 cm)</option>
+                            <option value="37" selected>37 (23.0 cm)</option>
+                            <option value="38">38 (23.5 cm)</option>
+                            <option value="39">39 (24.5 cm)</option>
+                            <option value="40">40 (25.0 cm)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-card" onclick="addCustomToCart('Petal Weave Loafers', 310000, 'prod-2')">
+                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                    </button>
+
+                    <div class="marketplace-links">
+                        <span class="mp-label">Atau beli via marketplace:</span>
+                        <div class="mp-buttons">
+                            <a href="https://shopee.co.id" target="_blank" class="mp-btn shopee">Shopee</a>
+                            <a href="https://tokopedia.com" target="_blank" class="mp-btn tokped">Tokopedia</a>
+                            <a href="https://tiktok.com" target="_blank" class="mp-btn tiktok">TikTok</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Produk 3 -->
+            <div class="product-card" id="prod-3">
+                <div class="product-image"><img src="sora-pointed-toe.jpg" alt="Foto produk Sora Pointed Toe"></div>
+                <div class="product-info">
+                    <h3>Sora Pointed Toe</h3>
+                    <span class="price" data-price="295000">Rp 295.000</span>
+                    <p>Model lancip minimalis yang memberikan kesan kaki lebih jenjang dan rapi.</p>
+                    
+                    <div class="variant-group">
+                        <label>Warna:</label>
+                        <select id="color-prod-3" class="variant-select">
+                            <option value="Mauve Pink">Mauve Pink</option>
+                            <option value="Classic Black">Classic Black</option>
+                        </select>
+                    </div>
+
+                    <div class="variant-group">
+                        <label>Ukuran (EU):</label>
+                        <select id="size-prod-3" class="variant-select">
+                            <option value="36">36 (22.5 cm)</option>
+                            <option value="37">37 (23.0 cm)</option>
+                            <option value="38">38 (23.5 cm)</option>
+                            <option value="39" selected>39 (24.5 cm)</option>
+                            <option value="40">40 (25.0 cm)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn-card" onclick="addCustomToCart('Sora Pointed Toe', 295000, 'prod-3')">
+                        <i class="fa-solid fa-cart-plus"></i> Add to Cart
+                    </button>
+
+                    <div class="marketplace-links">
+                        <span class="mp-label">Atau beli via marketplace:</span>
+                        <div class="mp-buttons">
+                            <a href="https://shopee.co.id" target="_blank" class="mp-btn shopee">Shopee</a>
+                            <a href="https://tokopedia.com" target="_blank" class="mp-btn tokped">Tokopedia</a>
+                            <a href="https://tiktok.com" target="_blank" class="mp-btn tiktok">TikTok</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Cart Sidebar / Drawer -->
+    <div id="cart-drawer" class="cart-drawer">
+        <div class="cart-header">
+            <h3>Keranjang Belanja</h3>
+            <button class="close-cart" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <p class="empty-cart-text">Keranjang kamu masih kosong.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-price">Rp 0</span>
+            </div>
+            <button class="btn-checkout" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+
+    <!-- Modal Panduan Ukuran (Size Guide) -->
+    <div id="size-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeSizeGuide()">&times;</span>
+            <h3>Panduan Ukuran (Size Guide) Path & Petal</h3>
+            <p>Ukur panjang telapak kaki Anda dari tumit hingga ujung jari terpanjang dalam sentimeter (cm), lalu sesuaikan dengan tabel di bawah:</p>
+            
+            <table class="size-table">
+                <thead>
+                    <tr>
+                        <th>Ukuran (EU)</th>
+                        <th>Panjang Kaki (cm)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>36</td><td>22.5 cm</td></tr>
+                    <tr><td>37</td><td>23.0 cm</td></tr>
+                    <tr><td>38</td><td>23.5 cm</td></tr>
+                    <tr><td>39</td><td>24.5 cm</td></tr>
+                    <tr><td>40</td><td>25.0 cm</td></tr>
+                </tbody>
+            </table>
+            <p class="size-tip"> *Tip: Jika kaki Anda cenderung lebar atau gemuk, disarankan naik 1 tingkat ukuran.*</p>
+        </div>
+    </div>
+
+    <!-- Brand Story Section -->
+    <section id="story" class="story-section">
+        <div class="story-container">
+            <h2>The Path & Petal Philosophy</h2>
+            <p>Kami percaya bahwa sepatu bukan sekadar alas pelindung kaki, melainkan teman setia yang merekam setiap jejak perjalanan hidupmu. Seperti kelopak bunga yang lembut namun kuat menopang keindahan alam, Path & Petal hadir untuk memastikan setiap langkahmu terasa ringan, anggun, dan penuh percaya diri.</p>
+        </div>
+    </section>
+
+    <!-- Informasi brand: konten dari why us pap.html -->
+<section id="about">
+    <div style="max-width: 800px; margin: 0 auto; padding: 40px 20px; text-align: center;">
+        <h2>Tentang Path & Petal</h2>
+        <p>Berawal dari Salatiga, Path & Petal lahir dari keinginan untuk memberikan flatshoes yang tidak hanya cantik dipandang, tapi juga sangat nyaman dipakai seharian. Kami percaya setiap wanita berhak melangkah dengan anggun tanpa rasa lecet.</p>
+        
+        <h3 style="margin-top: 30px;">Kenapa Harus Path & Petal?</h3>
+        <div style="text-align: left; display: inline-block; margin-top: 15px;">
+            <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                <li> <strong>Material Premium:</strong> Kulit sintetis pilihan yang lembut di kaki.</li>
+                <li> <strong>Sol Super Empuk (Padded Insole):</strong> Anti-pegal meski dipakai berjalan jauh.</li>
+                <li>🇮🇩 <strong>Artisanal Lokal:</strong> Dibuat dengan teliti oleh pengrajin sepatu lokal berpengalaman.</li>
+                <li> <strong>Desain Timeless:</strong> Mudah di-mix & match untuk acara kasual maupun formal.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <!-- Panduan belanja dan pembayaran: konten dari how to payment pap.html -->
+<section id="how-to-order" style="background-color: #f9f5f0; padding: 40px 20px;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <h2 style="text-align: center; margin-bottom: 30px;">Panduan Belanja & Pembayaran</h2>
+        
+        <div style="display: flex; flex-wrap: wrap; gap: 30px;">
+            <!-- Cara Belanja -->
+            <div style="flex: 1; min-width: 300px;">
+                <h3> Cara Belanja</h3>
+                <ol style="line-height: 1.8; padding-left: 20px;">
+                    <li><strong>Pilih Sepatu:</strong> Lihat koleksi kami, pilih warna dan ukuran yang pas.</li>
+                    <li><strong>Pilih Jalur Pembelian:</strong> 
+                        Kamu bisa langsung klik tombol <strong>Shopee/Tokopedia/TikTok</strong> yang ada di bawah produk.
+                        Atau, masukkan ke <strong>Keranjang</strong> web ini untuk memesan manual via WhatsApp admin.
+                    </li>
+                    <li><strong>Konfirmasi (Khusus WhatsApp):</strong> Admin kami akan menghitung total biaya beserta ongkos kirim ke alamatmu.</li>
+                </ol>
+            </div>
+
+            <!-- Cara Payment -->
+            <div style="flex: 1; min-width: 300px;">
+                <h3> Metode Pembayaran</h3>
+                <p>Untuk pembelian manual via WhatsApp web ini, kami menerima pembayaran melalui:</p>
+                <ul style="list-style: none; padding: 0; line-height: 1.8;">
+                    <li> <strong>Transfer Bank:</strong> BCA, Mandiri, BNI, BRI</li>
+                    <li> <strong>E-Wallet & QRIS:</strong> GoPay, OVO, DANA, ShopeePay</li>
+                </ul>
+                <p style="font-size: 0.9em; color: #666; margin-top: 15px;">
+                    <em>*Untuk pembelian via Shopee/Tokopedia/TikTok, metode pembayaran mengikuti sistem masing-masing platform (Bisa COD, SpayLater, dll).</em>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Ulasan pelanggan: konten dari review pap.html -->
+<section id="reviews" style="padding: 40px 20px; background-color: #ffffff;">
+    <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <h2 style="margin-bottom: 10px;">Kata Mereka Tentang Path & Petal</h2>
+        <p style="color: #666; margin-bottom: 30px;">Ribuan langkah nyaman telah dimulai dari sini.</p>
+        
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+            <!-- Review 1 -->
+            <div style="flex: 1; min-width: 250px; background: #f9f5f0; padding: 20px; border-radius: 12px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="color: #ffb829; font-size: 1.2em; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                <p style="font-style: italic; color: #444; font-size: 0.95em;">"Sepatunya beneran empuk banget! Biasa pakai flatshoes pasti lecet di tumit belakang, tapi Aura Classic ini aman seharian dipakai ngantor."</p>
+                <p style="font-weight: bold; margin-top: 15px; margin-bottom: 0; color: #333;">- Sarah N.</p>
+                <span style="font-size: 0.8em; color: #888;">(Pembeli Shopee)</span>
+            </div>
+
+            <!-- Review 2 -->
+            <div style="flex: 1; min-width: 250px; background: #f9f5f0; padding: 20px; border-radius: 12px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="color: #ffb829; font-size: 1.2em; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                <p style="font-style: italic; color: #444; font-size: 0.95em;">"Packaging-nya rapi & cantik. Ukuran 38 pas banget di kaki aku ngikutin size guide-nya. Warnanya juga cantik sesuai foto. Def bakal beli warna lain!"</p>
+                <p style="font-weight: bold; margin-top: 15px; margin-bottom: 0; color: #333;">- Amanda T.</p>
+                <span style="font-size: 0.8em; color: #888;">(Pembeli WhatsApp)</span>
+            </div>
+
+            <!-- Review 3 -->
+            <div style="flex: 1; min-width: 250px; background: #f9f5f0; padding: 20px; border-radius: 12px; text-align: left; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+                <div style="color: #ffb829; font-size: 1.2em; margin-bottom: 10px;">⭐⭐⭐⭐⭐</div>
+                <p style="font-style: italic; color: #444; font-size: 0.95em;">"Desain Petal Weave cakep parah, kelihatan mewah tapi harganya affordable. Solnya lentur jadi enak buat jalan jauh pas liburan."</p>
+                <p style="font-weight: bold; margin-top: 15px; margin-bottom: 0; color: #333;">- Rina F.</p>
+                <span style="font-size: 0.8em; color: #888;">(Pembeli Tokopedia)</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Path & Petal</h3>
+                <p>Langkah anggun dalam setiap perjalanan harianmu.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Kontak & E-Commerce</h4>
+                <p>WhatsApp: +62 856-1562-949</p>
+                <p>Instagram / TikTok: @pathandpetal.official</p>
+                <p>Lokasi: Salatiga, Indonesia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Path & Petal. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
